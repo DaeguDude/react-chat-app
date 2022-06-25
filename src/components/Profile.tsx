@@ -1,34 +1,81 @@
 export function Profile() {
   return (
-    // cursor pointer
-    // hover color change
-
-    <div className="flex p-2 border border-black">
-      {/* Let's make shrink not possible */}
-      <div className="w-[20%]">
-        <img
-          className="rounded-full border-2 border-black"
-          alt="Lucas Revelle"
-          src="https://video-ssn1-1.xx.fbcdn.net/v/t1.6435-1/74324814_3165646943507281_7840642414380318720_n.jpg?stp=dst-jpg_p100x100&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=7206a8&amp;_nc_ohc=yecNstk8TNwAX8GxtFe&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=video-ssn1-1.xx&amp;oh=00_AT_1rKgPWwLKQ0YqJKcluS9d8vld23qjzCIUDQ7A9YDvRg&amp;oe=62DD8F32"
-        ></img>
-      </div>
-      <div className="w-[80%] pl-3">
-        {/* 오른쪽 */}
-        <div className="flex">
-          <div className="text-[15px] font-normal text-[#050505] mr-2">
-            김유진
+    <div className="">
+      <div className="px-sm">
+        <div className="flex p-sm cursor-pointer hover:bg-grey/10 rounded-sm ">
+          <div className="min-w-[25%] pr-md">
+            <img
+              alt="Christoph Pehofer"
+              className="w-[56px] h-[56px] rounded-full"
+              src="https://video-ssn1-1.xx.fbcdn.net/v/t1.6435-1/141309624_10214618459213808_4896948802002001683_n.jpg?stp=dst-jpg_p100x100&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=7206a8&amp;_nc_ohc=bC77HAx72_4AX8rc8T0&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=video-ssn1-1.xx&amp;oh=00_AT9alt49S821Zk4msXI6eymoDhIr_JSKA3m240GBeaoTRQ&amp;oe=62DB1017"
+            />
           </div>
-          <div className="flex items-center">
-            <span className="h-[4px] w-[4px] bg-[#65676b] rounded-full inline-block mr-1"></span>
-            <span className="text-[13px] font-normal text-[#65676b]">
-              2016.12.13
-            </span>
+          <div className="w-3/4 flex flex-col justify-center">
+            <div className="flex items-center ">
+              <span className="text-lg pr-md text-black">최예슬</span>
+              <span className="text-sm text-grey">2016.12.13</span>
+            </div>
+            <p className="text-sm text-grey overflow-hidden whitespace-nowrap text-ellipsis">
+              안녕하세요 서류지원 합격한 최예슬입니다. 안녕하세요 서류지원
+              합격한 최예슬입니다. 안녕하세요 서류지원 합격한 최예슬입니다.
+            </p>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
 
-        <div className="text-[13px] font-normal text-[#65676b] overflow-hidden whitespace-nowrap text-ellipsis">
-          안녕하세요 서류지원 합격한 최예슬입니다. 안녕하세요 서류지원 합격한
-          최예슬입니다. 안녕하세요 서류지원 합격한 최예슬입니다.
+export function ProfileHovered() {
+  return (
+    <div className="">
+      <div className="px-sm">
+        <div className="flex p-sm cursor-pointer bg-grey/10 rounded-sm ">
+          <div className="min-w-[25%] pr-md">
+            <img
+              alt="Christoph Pehofer"
+              className="w-[56px] h-[56px] rounded-full"
+              src="https://video-ssn1-1.xx.fbcdn.net/v/t1.6435-1/141309624_10214618459213808_4896948802002001683_n.jpg?stp=dst-jpg_p100x100&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=7206a8&amp;_nc_ohc=bC77HAx72_4AX8rc8T0&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=video-ssn1-1.xx&amp;oh=00_AT9alt49S821Zk4msXI6eymoDhIr_JSKA3m240GBeaoTRQ&amp;oe=62DB1017"
+            />
+          </div>
+          <div className="w-3/4 flex flex-col justify-center">
+            <div className="flex items-center ">
+              <span className="text-lg pr-md text-black">최예슬</span>
+              <span className="text-sm text-grey">2016.12.13</span>
+            </div>
+            <p className="text-sm text-grey overflow-hidden whitespace-nowrap text-ellipsis">
+              안녕하세요 서류지원 합격한 최예슬입니다. 안녕하세요 서류지원
+              합격한 최예슬입니다. 안녕하세요 서류지원 합격한 최예슬입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ProfileSelected() {
+  return (
+    <div className="">
+      <div className="px-sm">
+        <div className="flex p-sm cursor-pointer bg-purple/10 rounded-sm ">
+          <div className="min-w-[25%] pr-md">
+            <img
+              alt="Christoph Pehofer"
+              className="w-[56px] h-[56px] rounded-full"
+              src="https://video-ssn1-1.xx.fbcdn.net/v/t1.6435-1/141309624_10214618459213808_4896948802002001683_n.jpg?stp=dst-jpg_p100x100&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=7206a8&amp;_nc_ohc=bC77HAx72_4AX8rc8T0&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=video-ssn1-1.xx&amp;oh=00_AT9alt49S821Zk4msXI6eymoDhIr_JSKA3m240GBeaoTRQ&amp;oe=62DB1017"
+            />
+          </div>
+          <div className="w-3/4 flex flex-col justify-center">
+            <div className="flex items-center ">
+              <span className="text-lg pr-md text-black">최예슬</span>
+              <span className="text-sm text-grey">2016.12.13</span>
+            </div>
+            <p className="text-sm text-grey overflow-hidden whitespace-nowrap text-ellipsis">
+              안녕하세요 서류지원 합격한 최예슬입니다. 안녕하세요 서류지원
+              합격한 최예슬입니다. 안녕하세요 서류지원 합격한 최예슬입니다.
+            </p>
+          </div>
         </div>
       </div>
     </div>
