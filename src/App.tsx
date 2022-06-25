@@ -1,7 +1,8 @@
 import React from "react";
+import "./index.css";
 
 function App() {
-  return <div className="App">리액트 챗앱</div>;
+  return <h1 className="text-2xl">Hello world!</h1>;
 }
 
 export default App;
