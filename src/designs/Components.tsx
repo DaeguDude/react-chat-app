@@ -35,6 +35,13 @@ export const Components = () => {
           <div className="my-xs"></div>
           <ChatSearchBarWithoutSearch />
         </div>
+
+        <div className="m-[50px] w-[150px] border-2 border-black">
+          <h2 className="text-[20px]">Button</h2>
+          <button className="w-full rounded-md bg-purple/90 hover:bg-purple text-white py-sm px-md">
+            보내기
+          </button>
+        </div>
       </div>
     </div>
   );
