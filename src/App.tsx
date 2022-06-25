@@ -1,8 +1,13 @@
 import React from "react";
+import { Design } from "./designs/Design";
 import "./index.css";
 
 function App() {
-  return <h1 className="text-2xl">Hello world!</h1>;
+  return (
+    <div className="h-screen w-screen border-[20px] border-black">
+      <Design />
+    </div>
+  );
 }
 
 export default App;
