@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import { Chats } from "./components/Chats";
+import { useUserList } from "./hooks/useUserList";
 import "./index.css";
 
 function App() {
   return (
-    <div className="h-screen w-screen border-[20px] border-black">
+    <div className="min-h-screen min-w-screen border-[20px] border-black">
       <nav>
         <Link className="mr-sm" to="/">
           홈
@@ -17,6 +19,10 @@ function App() {
         </Link>
       </nav>
       <Outlet />
+
+      <div className="w-[360px] min-h-screen">
+        <Chats />
+      </div>
     </div>
   );
 }

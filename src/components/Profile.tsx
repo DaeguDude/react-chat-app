@@ -1,4 +1,40 @@
-export function Profile() {
+import { ChatListResponse } from "../types/type";
+
+interface IProfile extends ChatListResponse {}
+
+export function Profile({
+  lastMessage,
+  lastMessageTime,
+  name,
+  profileImgSrc,
+}: IProfile) {
+  return (
+    <div className="">
+      <div className="px-sm">
+        <div className="flex p-sm cursor-pointer hover:bg-grey/10 rounded-sm ">
+          <div className="min-w-[25%] pr-md">
+            <img
+              alt="Christoph Pehofer"
+              className="w-[56px] h-[56px] rounded-full"
+              src={profileImgSrc}
+            />
+          </div>
+          <div className="w-3/4 flex flex-col justify-center">
+            <div className="flex items-center ">
+              <span className="text-lg pr-md text-black">{name}</span>
+              <span className="text-sm text-grey">{lastMessageTime}</span>
+            </div>
+            <p className="text-sm text-grey overflow-hidden whitespace-nowrap text-ellipsis">
+              {lastMessage}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ProfileForDisplay() {
   return (
     <div className="">
       <div className="px-sm">

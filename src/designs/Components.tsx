@@ -4,6 +4,7 @@ import {
 } from "../components/ChatSearchBar";
 import {
   Profile,
+  ProfileForDisplay,
   ProfileHovered,
   ProfileSelected,
 } from "../components/Profile";
@@ -17,7 +18,7 @@ export const Components = () => {
       <div className="flex flex-wrap">
         <div className="w-[330px] border-2 border-black">
           <h2 className="text-[20px]">Profile</h2>
-          <Profile />
+          <ProfileForDisplay />
           <ProfileHovered />
           <ProfileSelected />
         </div>
