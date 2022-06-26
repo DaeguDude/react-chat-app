@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import { Chats } from "./components/Chats";
 import { useUserList } from "./hooks/useUserList";
 import "./index.css";
+import { Main } from "./view/Main";
+import { NavBar } from "./view/NavBar";
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
       </nav>
       <Outlet />
 
-      <div className="w-[360px] min-h-screen">
-        <Chats />
+      <div className="flex">
+        <NavBar />
+        <Main />
       </div>
     </div>
   );

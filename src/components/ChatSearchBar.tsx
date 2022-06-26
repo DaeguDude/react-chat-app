@@ -1,14 +1,16 @@
 export function ChatSearchBar() {
   return (
-    <div className="flex rounded-md bg-grey/20 text-grey py-sm">
-      <div className="flex items-center pl-sm">
-        <SearchIcon />
+    <div className="py-md px-sm border border-black">
+      <div className="flex rounded-md bg-grey/20 text-grey py-sm">
+        <div className="flex items-center pl-sm">
+          <SearchIcon />
+        </div>
+        <input
+          type="text"
+          className="pl-sm w-full outline-none bg-transparent text-black"
+          placeholder="대화 검색하기"
+        />
       </div>
-      <input
-        type="text"
-        className="pl-sm w-full outline-none bg-transparent text-black"
-        placeholder="대화 검색하기"
-      />
     </div>
   );
 }
