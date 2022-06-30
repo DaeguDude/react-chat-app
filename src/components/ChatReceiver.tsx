@@ -1,8 +1,25 @@
-export function ChatReceiver() {
+import { UserResponse } from "../types/type";
+
+interface IChatReceiver {
+  userInfo: UserResponse;
+}
+
+export function ChatReceiver({ userInfo }: IChatReceiver) {
   return (
-    <div className="h-[100px] border border-black flex flex-col justify-center px-xl">
-      <div className="text-xl">최예슬</div>
-      <div className="text-md text-purple">웹앱 UX 디자이너</div>
+    <ChatReceiverLayout>
+      <div className="text-xl">{userInfo.name}</div>
+      <div className="text-md text-purple">{userInfo.occupation}</div>
+    </ChatReceiverLayout>
+  );
+}
+
+interface IChatReceiverLayout {
+  children: React.ReactNode;
+}
+export function ChatReceiverLayout({ children }: IChatReceiverLayout) {
+  return (
+    <div className="h-[100px] flex flex-col justify-center px-xl border-b border-grey/50">
+      {children}
     </div>
   );
 }

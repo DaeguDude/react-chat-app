@@ -1,31 +1,26 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import { Chats } from "./components/Chats";
-import { useUserList } from "./hooks/useUserList";
+import { useAppInfoDispatch } from "./contexts/AppContext";
 import "./index.css";
 import { Main } from "./view/Main";
 import { NavBar } from "./view/NavBar";
 
-function App() {
-  return (
-    <div className="min-h-screen min-w-screen border-[20px] border-black">
-      <nav>
-        <Link className="mr-sm" to="/">
-          홈
-        </Link>
-        <Link className="mr-sm" to="/design-system">
-          디자인 시스템
-        </Link>
-        <Link className="mr-sm" to="/components">
-          컴포넌트
-        </Link>
-      </nav>
-      <Outlet />
+let isInitialized = false;
 
-      <div className="flex">
-        <NavBar />
-        <Main />
-      </div>
+function App() {
+  const dispatch = useAppInfoDispatch();
+
+  // 현재는 로그인을 하는 방법이 구현이 안되었기 때문에, 임의로 userId 1로 바꾸어주기
+  if (!isInitialized) {
+    dispatch({
+      type: "changed_user",
+      userId: 1,
+    });
+  }
+
+  return (
+    <div className="flex">
+      <NavBar />
+      <Main />
     </div>
   );
 }

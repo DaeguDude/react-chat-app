@@ -28,6 +28,9 @@ module.exports = {
       md: 50,
       full: 9999,
     },
+    screens: {
+      lg: "900px",
+    },
     extend: {},
   },
   plugins: [],

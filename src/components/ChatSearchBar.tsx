@@ -1,12 +1,22 @@
-export function ChatSearchBar() {
+interface IChatSearchBar {
+  filterText: string;
+  onFilterTextChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export function ChatSearchBar({
+  filterText,
+  onFilterTextChange,
+}: IChatSearchBar) {
   return (
-    <div className="py-md px-sm border border-black">
+    <div className="py-md px-sm ">
       <div className="flex rounded-md bg-grey/20 text-grey py-sm">
         <div className="flex items-center pl-sm">
           <SearchIcon />
         </div>
         <input
           type="text"
+          value={filterText}
+          onChange={onFilterTextChange}
           className="pl-sm w-full outline-none bg-transparent text-black"
           placeholder="대화 검색하기"
         />

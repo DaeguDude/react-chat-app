@@ -1,28 +1,47 @@
-import { useChats } from "../hooks/useChats";
-import { Profile } from "./Profile";
+import { useAppInfoDispatch } from "../contexts/AppContext";
+import { ChatListResponse } from "../types/type";
+import { ChatRoomRow } from "./ChatRoomRow";
 
-export function Chats() {
-  const chatsQuery = useChats({ userId: 1 });
+interface IChats {
+  filterText: string;
+  chatList: ChatListResponse[];
+}
 
-  if (chatsQuery.data) {
-    return (
-      <div>
-        {chatsQuery.data.map((chatInfo) => (
-          <Profile
-            key={chatInfo.name}
-            lastMessage={chatInfo.lastMessage}
-            lastMessageTime={chatInfo.lastMessageTime}
-            name={chatInfo.name}
-            profileImgSrc={chatInfo.profileImgSrc}
-          />
-        ))}
-      </div>
-    );
-  }
+export function Chats({ chatList, filterText }: IChats) {
+  const visibleChatList: ChatListResponse[] = [];
+  const appInfoDispatch = useAppInfoDispatch();
 
-  if (chatsQuery.isError) {
-    return <div>데이터를 불러오는데 실패하였습니다.</div>;
-  }
+  const handleChatRoomChange = (chatRoomId: number) => {
+    appInfoDispatch({
+      type: "changed_chatRoom",
+      chatRoomId,
+    });
+  };
 
-  return <div>데이터를 불러오고 있습니다.</div>;
+  chatList.forEach((chatRoom) => {
+    if (
+      chatRoom.recipientName.toLowerCase().indexOf(filterText.toLowerCase()) ===
+      -1
+    ) {
+      return;
+    }
+
+    visibleChatList.push(chatRoom);
+  });
+
+  return (
+    <div className="min-w-[88px] h-[calc(100%-166px)] overflow-y-scroll">
+      {visibleChatList.map((chatInfo) => (
+        <ChatRoomRow
+          key={chatInfo.recipientName}
+          lastMessage={chatInfo.lastMessage}
+          lastMessageDate={chatInfo.lastMessageDate}
+          recipientName={chatInfo.recipientName}
+          recipientChatRoomRowImgSrc={chatInfo.recipientChatRoomRowImgSrc}
+          id={chatInfo.id}
+          onChatRoomChange={handleChatRoomChange}
+        />
+      ))}
+    </div>
+  );
 }
