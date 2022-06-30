@@ -2,12 +2,20 @@ export interface UserResponse {
   id: number;
   name: string;
   occupation: string;
-  profileImgSrc: string;
+  ChatRoomRowImgSrc: string;
 }
 
 export interface ChatListResponse {
-  name: string;
-  profileImgSrc: string;
+  id: number;
+  recipientChatRoomRowImgSrc: string;
+  recipientName: string;
+  lastMessageDate: string;
   lastMessage: string;
-  lastMessageTime: string;
+}
+
+export interface ChatMessage {
+  id: number;
+  content: string;
+  timeCreated: string;
+  senderId: number;
 }
