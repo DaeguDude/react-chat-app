@@ -3,11 +3,11 @@ import {
   ChatSearchBarWithoutSearch,
 } from "../components/ChatSearchBar";
 import {
-  Profile,
-  ProfileForDisplay,
-  ProfileHovered,
-  ProfileSelected,
-} from "../components/Profile";
+  ChatRoomRow,
+  ChatRoomRowForDisplay,
+  ChatRoomRowHovered,
+  ChatRoomRowSelected,
+} from "../components/ChatRoomRow";
 import { ReceiverMessage } from "../components/ReceiverMessage";
 import { SenderMessage } from "../components/SenderMessage";
 
@@ -17,10 +17,10 @@ export const Components = () => {
       <h1 className="text-[40px]">컴포넌트</h1>
       <div className="flex flex-wrap">
         <div className="w-[330px] border-2 border-black">
-          <h2 className="text-[20px]">Profile</h2>
-          <ProfileForDisplay />
-          <ProfileHovered />
-          <ProfileSelected />
+          <h2 className="text-[20px]">ChatRoomRow</h2>
+          <ChatRoomRowForDisplay />
+          <ChatRoomRowHovered />
+          <ChatRoomRowSelected />
         </div>
 
         <div className="m-[50px] w-[700px] border-2 border-black">
@@ -32,7 +32,7 @@ export const Components = () => {
 
         <div className="m-[50px] w-[700px] border-2 border-black">
           <h2 className="text-[20px]">ChatSearchBar</h2>
-          <ChatSearchBar />
+          {/* <ChatSearchBar /> */}
           <div className="my-xs"></div>
           <ChatSearchBarWithoutSearch />
         </div>
