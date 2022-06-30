@@ -30,7 +30,7 @@ export function Chats({ chatList, filterText }: IChats) {
   });
 
   return (
-    <div className="min-w-[88px] h-[calc(100%-166px)] overflow-y-scroll">
+    <div className="min-w-[88px] lg:min-w-[359px] h-[calc(100%-66px)] overflow-y-scroll">
       {visibleChatList.map((chatInfo) => (
         <ChatRoomRow
           key={chatInfo.recipientName}

@@ -18,7 +18,7 @@ export function NavBar() {
   return (
     <div className="w-[100px] lg:w-[360px] min-h-screen max-h-screen  border-grey/50">
       <NavTop />
-      <div className="h-[100%] border-r border-grey/50">
+      <div className="h-[calc(100%-100px)] border-r border-grey/50">
         <ChatSearchBar
           filterText={filterText}
           onFilterTextChange={handleFilterTextChange}
